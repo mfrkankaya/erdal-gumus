@@ -1,0 +1,31 @@
+html {
+//   font-size: 62.5%;
+  box-sizing: border-box;
+  // font-family: $mainFont;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+//   font-size: 1.6rem;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+.fluid {
+  width: 100%;
+}
+
+.full-page {
+  width: 100vw;
+  min-height: 100vh;
+}

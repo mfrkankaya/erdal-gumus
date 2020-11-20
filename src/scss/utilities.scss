@@ -1,0 +1,503 @@
+// Unit
+$u: rem;
+$from: 0;
+$through: 10;
+$zero: 00;
+
+// zero değişkeninin olmasının sebebi: font-weight verirken iki 0 koysak da tek sıfır görüyor
+// Sınıflar from değişkeninden through değişkenine kadar gidecek.
+// p-1, p-2, p-3...p-10 gibi
+
+/* -------------------------------------------------------------------------- */
+/*                                  PADDINGS                                  */
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------ Full Padding ------------------------------ */
+
+@for $i from $from through $through {
+    .p-#{$i} {
+        padding: #{$i}$u;
+    }
+}
+
+/* ------------------------------- Padding Top ------------------------------ */
+
+@for $i from $from through $through {
+    .pt-#{$i} {
+        padding-top: #{$i}$u;
+    }
+}
+
+/* ------------------------------ Padding Right ----------------------------- */
+
+@for $i from $from through $through {
+    .pr-#{$i} {
+        padding-right: #{$i}$u;
+    }
+}
+
+/* ----------------------------- Padding Bottom ----------------------------- */
+
+@for $i from $from through $through {
+    .pb-#{$i} {
+        padding-bottom: #{$i}$u;
+    }
+}
+
+/* ------------------------------ Padding Left ------------------------------ */
+
+@for $i from $from through $through {
+    .pl-#{$i} {
+        padding-left: #{$i}$u;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   MARGINS                                  */
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------- Full Margin ------------------------------ */
+
+@for $i from $from through $through {
+    .m-#{$i} {
+        margin: #{$i}$u;
+    }
+}
+
+/* ------------------------------- Margin Top ------------------------------- */
+
+@for $i from $from through $through {
+    .mt-#{$i} {
+        margin-top: #{$i}$u;
+    }
+}
+
+/* ------------------------------ Margin Right ------------------------------ */
+
+@for $i from $from through $through {
+    .mr-#{$i} {
+        margin-right: #{$i}$u;
+    }
+}
+
+/* ------------------------------ Margin Bottom ----------------------------- */
+
+@for $i from $from through $through {
+    .mb-#{$i} {
+        margin-bottom: #{$i}$u;
+    }
+}
+
+/* ------------------------------- Margin Left ------------------------------ */
+
+@for $i from $from through $through {
+    .ml-#{$i} {
+        margin-left: #{$i}$u;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    TEXTS                                   */
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------- Font Weight ------------------------------ */
+
+// f-100'den f-900'e kadar font-weight'i ayarlar
+@for $i from 1 through 9 {
+    .f-#{$i}00 {
+        font-weight: #{$i}$zero$zero;
+    }
+}
+
+/* -------------------------------- Font Size ------------------------------- */
+
+// fs-12'den f-36'ya kadar font-size'ı ayarlar
+@for $i from 12 through 36 {
+    .fs-#{$i} {
+        font-size: #{$i}px;
+    }
+}
+
+/* ------------------------------- Text Align ------------------------------- */
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* ------------------------------- Text Colors ------------------------------ */
+
+.primary {
+    @if variable-exists($name: primary) {
+        color: $primary;
+    } @else {
+        color: #007bff;
+    }
+}
+
+.secondary {
+    @if variable-exists($name: secondary) {
+        color: $secondary;
+    } @else {
+        color: #6c757d;
+    }
+}
+
+.warning {
+    @if variable-exists($name: warning) {
+        color: $warning;
+    } @else {
+        color: #ffae42;
+    }
+}
+
+.danger {
+    @if variable-exists($name: danger) {
+        color: $danger;
+    } @else {
+        color: #ff0033;
+    }
+}
+
+.success {
+    @if variable-exists($name: success) {
+        color: $success;
+    } @else {
+        color: #28a745;
+    }
+}
+
+.info {
+    @if variable-exists($name: info) {
+        color: $info;
+    } @else {
+        color: #17a2b8;
+    }
+}
+
+.light {
+    @if variable-exists($name: light) {
+        color: $light;
+    } @else {
+        color: #f8f9fa;
+    }
+}
+
+.dark {
+    @if variable-exists($name: dark) {
+        color: $dark;
+    } @else {
+        color: #343a40;
+    }
+}
+
+.white {
+    @if variable-exists($name: whitee) {
+        color: $whitee;
+    } @else {
+        color: #fff;
+    }
+}
+
+.black {
+    @if variable-exists($name: blackk) {
+        color: $blackk;
+    } @else {
+        color: #000;
+    }
+}
+
+.muted {
+    @if variable-exists($name: muted) {
+        color: $muted;
+    } @else {
+        color: #6c757d;
+    }
+}
+
+/* ----------------------------- Text Transforms ---------------------------- */
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   BORDERS                                  */
+/* -------------------------------------------------------------------------- */
+
+@for $i from $from through $through {
+    .border-#{$i} {
+        border-width: #{$i}px;
+    }
+}
+
+.dashed {
+    border-style: dashed;
+}
+
+.dotted {
+    border-style: dotted;
+}
+
+.solid {
+    border-style: solid;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Layouts                                  */
+/* -------------------------------------------------------------------------- */
+
+/* ---------------------------------- Flex ---------------------------------- */
+
+@for $i from 1 through 12 {
+    .flex-#{$i} {
+        flex: $i;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+.space-aorund {
+    justify-content: space-aorund;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-start {
+    align-self: flex-start;
+}
+.self-end {
+    align-self: flex-end;
+}
+
+/* ------------------------------- Dimensions ------------------------------- */
+
+// Width: w-1'den w-10'a kadar
+@for $i from $from through $through {
+    .w-#{$i}0 {
+        width: #{$i}0vw;
+    }
+}
+
+@for $i from $from through $through {
+    .h-#{$i}0 {
+        height: #{$i}0vh;
+    }
+}
+
+// Min-Width minw-1'den minw-10'a kadar
+@for $i from $from through $through {
+    .minw-#{$i}0 {
+        min-width: #{$i}0vw;
+    }
+}
+
+@for $i from $from through $through {
+    .minh-#{$i}0 {
+        min-height: #{$i}0vh;
+    }
+}
+
+// Max-Width minw-1'den minw-10'a kadar
+@for $i from $from through $through {
+    .maxw-#{$i}0 {
+        max-width: #{$i}0vw;
+    }
+}
+
+@for $i from $from through $through {
+    .maxh-#{$i}0 {
+        max-height: #{$i}0vh;
+    }
+}
+
+/* ------------------------------- Percentage ------------------------------- */
+
+@for $i from $from through $through {
+    .per-w-#{$i}0 {
+        width: #{$i}0%;
+    }
+}
+
+@for $i from $from through $through {
+    .per-h-#{$i}0 {
+        height: #{$i}0%;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 BACKGROUNDS                                */
+/* -------------------------------------------------------------------------- */
+
+/* ---------------------------- Solid Backgrounds --------------------------- */
+
+.bg-primary {
+    @if variable-exists($name: primary) {
+        background-color: $primary;
+    } @else {
+        background-color: #007bff;
+    }
+}
+
+.bg-secondary {
+    @if variable-exists($name: secondary) {
+        background-color: $secondary;
+    } @else {
+        background-color: #6c757d;
+    }
+}
+
+.bg-warning {
+    @if variable-exists($name: warning) {
+        background-color: $warning;
+    } @else {
+        background-color: #ffae42;
+    }
+}
+
+.bg-danger {
+    @if variable-exists($name: danger) {
+        background-color: $danger;
+    } @else {
+        background-color: #ff0033;
+    }
+}
+
+.bg-success {
+    @if variable-exists($name: success) {
+        background-color: $success;
+    } @else {
+        background-color: #28a745;
+    }
+}
+
+.bg-info {
+    @if variable-exists($name: info) {
+        background-color: $info;
+    } @else {
+        background-color: #17a2b8;
+    }
+}
+
+.bg-light {
+    @if variable-exists($name: light) {
+        background-color: $light;
+    } @else {
+        background-color: #f8f9fa;
+    }
+}
+
+.bg-dark {
+    @if variable-exists($name: dark) {
+        background-color: $dark;
+    } @else {
+        background-color: #343a40;
+    }
+}
+
+.bg-white {
+    @if variable-exists($name: whitee) {
+        background-color: $whitee;
+    } @else {
+        background-color: #fff;
+    }
+}
+
+.bg-black {
+    @if variable-exists($name: blackk) {
+        background-color: $blackk;
+    } @else {
+        background-color: #000;
+    }
+}
+
+.bg-muted {
+    @if variable-exists($name: muted) {
+        background-color: $muted;
+    } @else {
+        background-color: #6c757d;
+    }
+}
+
+/* -------------------------------- POSITIONS ------------------------------- */
+
+.fixed {
+    position: fixed;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.sticky {
+    position: sticky;
+}
+
+/* -------------------------- Gradient Backgrounds -------------------------- */
